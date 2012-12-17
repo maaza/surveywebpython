@@ -1,0 +1,82 @@
+body {
+    heigth: 100.01%;
+    fontsize: 120%;    
+    background: #c00 url("../images/back.png") repeat top left fixed;
+}
+#page{
+    width: 60em;
+    margin: 1em auto;
+    border: 10px solid #333;
+    padding: 1em;
+    background-color: #fff;
+    overflow: hidden;
+}
+h1, h2 {
+    text-align: center;
+}
+h1 a{
+    color: #822;
+    text-decoration: none;
+}
+.uploadlink{
+    height: 2em;
+    text-align: center;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    padding: .5em; 
+}
+.uploadlink a{
+    color: #bbb;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+}
+a img{
+    border: 0;
+}
+div.media{
+    font-size: 0.8em;
+    border: 3px solid #ddd;
+    border-width: 0 2px 1px 0;
+    padding: .3em;
+    width: 200px;
+    float: left;
+    margin: 1em;
+}
+p.title{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.tags a{
+    color: #000;
+    text-decoration: none;
+}
+.links{
+    text-align: right;
+}
+.links a{
+    color: #422;
+    text-decoration: none;
+}
+hr{
+    clear: both;
+    border: 1px solid #dedede;
+    border-width: 1px 0 0;
+}
+.uploadform input{
+    font-size: 1.5em;
+    width: 100%;
+}
+.uploadform textarea {
+    font-size: 2em;
+    width: 100%;
+}
+fieldset{
+    padding: 0.3em 1em;
+    margin: 4em;
+    font-size: 1.5em;
+}
+.fileinput{
+    margin: 2em;
+}

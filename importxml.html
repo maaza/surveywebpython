@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+		<div id="page">
+		   <H1>Import XML</H1>
+         {%	if user  %}  
+           Hello <em>{{ user  }}</em>! [<a href= {{ url }} >sign out</a>]
+		   </br>
+		   </br>
+		   </br>
+		   </br>
+		   <form  action="/importxml1?%s" enctype="multipart/form-data" action="/" method="POST">
+       	   <input type="file" name="file" multiple="true" />
+       	   <input type="submit" name="BackToMenu" value="Back to Menu">
+           <input type="submit" name="submit" value="Submit" />
+           </form> 
+		 {% else %}  
+           <br><FONT Size=4><em><b>Please sign in to access the survey app!!! <br><br>Sign in using: </b></em></FONT>
+           <a href="{{ url }}">{{ url_linktext }}</a> 
+        {% endif %}
+		</div>
+	</body>
+</html>
+	

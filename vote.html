@@ -1,0 +1,32 @@
+<html>
+	<body>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+		<div id="page">
+		   <H1>Vote category</H1>
+         {%	if user  %}  
+           Hello <em>{{ user  }}</em>! [<a href= {{ url }} >sign out</a>]
+		   </br>
+		   </br>
+		   </br>
+		   </br>
+		    <h3> Category Name :  Creator </h3>
+	 
+		    <form action="/pickitem?%s" method="get"> 
+		    {% for categories in categories_val %}
+                <div><input type="radio" name="category_name" value="{{ categories.category_name }}" checked>"{{ categories.category_name }}"     : "{{ categories.created_by }}"  
+          			 <input type=hidden name="categorycreator" value="{{ categories.created_by  }}" > "{{ categories.created_by  }}"
+          		</div> 
+            {% endfor %}	   
+        
+            <div>
+            <input type="submit" name="BackToMenu" value="Back to Menu">
+            <input type="submit" name="VoteItem" value=Vote Item">
+            </div>
+            
+ 		  {% else %}  
+           <br><FONT Size=4><em><b>Please sign in to access the survey app!!! <br><br>Sign in using: </b></em></FONT>
+           <a href="{{ url }}">{{ url_linktext }}</a> 
+          {% endif %}
+		</div>
+	</body>
+</html>

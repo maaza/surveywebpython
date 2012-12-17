@@ -1,0 +1,36 @@
+<html>
+	<body>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+		<div id="page">
+		{%	if user  %}  
+           Hello <em>{{ user  }}</em>! [<a href= {{ url }} >sign out</a>]
+		   </br>
+           <H1>Main Menu</H1> 
+           <form action="/menuselect?" method="get">
+           <div><input type="radio" name="menu_choice" value="1" checked> Create a Category</div>
+           <div><input type="radio" name="menu_choice" value="2"> Create Items</div>
+           <div><input type="radio" name="menu_choice" value="6"> Vote for Category</div>
+           <div><input type="radio" name="menu_choice" value="7"> Result for a Category</div>
+           <div><input type="radio" name="menu_choice" value="9"> Export XML</div>
+           <div><input type="radio" name="menu_choice" value="10"> Import XML</div>
+           <div><input type="radio" name="menu_choice" value="11"> Add Comments</div>
+           <div><input type="radio" name="menu_choice" value="8"> Search a Category/Item</div>
+
+           {% if menu_choice == '0' %}  
+                <br /><FONT COLOR="Red">Please choose an option and click Submit</FONT> 
+           {% endif %}
+		   <br />
+           <div>
+           <input type="submit" name="submit" value="Submit">
+           </form>
+           <hr>
+           </div>
+		   
+        {% else %}  
+           <br><FONT Size=4><em><b>Please sign in to access the survey app!!! <br><br>Sign in using: </b></em></FONT>
+           <a href="{{ url }}">{{ url_linktext }}</a> 
+        {% endif %}
+		</div>
+	</body>
+</html>
+	

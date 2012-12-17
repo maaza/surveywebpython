@@ -1,0 +1,38 @@
+<html>
+	<body>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/style.css" />
+		<div id="page">
+		   <H1>Create Item</H1>
+         {%	if user  %}  
+           Hello <em>{{ user  }}</em>! [<a href= {{ url }} >sign out</a>]
+		   </br>
+		   </br>
+		   </br>
+		   </br>
+		    {% if erroroccured == 100  %}
+		 		<br>No. of Items can't be blank.</br>
+		 		<FORM><INPUT TYPE='button' VALUE='Back' onClick='history.go(-1);return true;'></FORM><br>
+ 
+		 	{% endif %}
+		 	{% if  erroroccured == 101  %}
+		 		<br>No. of items has to be a integer</br>
+		 		<FORM><INPUT TYPE='button' VALUE='Back' onClick='history.go(-1);return true;'></FORM><br>
+		 
+		 	{% endif %}
+		 	{% if  erroroccured == 0  %}
+     			<form name=createitems action="/createitem1" enctype="multipart/form-data" method="get">
+     			{% for itemsin in sitem  %}
+     				Item Value {{ itemsin }} <input type=text name=items{{ itemsin }}><br> 
+     			{% endfor %}
+     			<input type=hidden name=categoryname value= {{ category_name }} >
+     			<input type=hidden name=items value={{ items }} > 
+     			<input type="submit" name="BackToMenu" value="Back to Menu">
+     			<input type="submit" name = "createitems" value="Create Items"><input type="reset" value="Clear Form"></form> 		
+ 			{% endif %}
+		 {% else %}  
+           <br><FONT Size=4><em><b>Please sign in to access the survey app!!! <br><br>Sign in using: </b></em></FONT>
+           <a href="{{ url }}">{{ url_linktext }}</a> 
+         {% endif %}
+		</div>
+	</body>
+</html>
